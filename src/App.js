@@ -1,16 +1,16 @@
 import React from 'react';
-import ColorCards from './components/ColorCards.jsx';
 import './styles/tailwind.css';
+import ColorCards from './components/ColorCards.jsx';
+import MainBlock from './components/MainBlock.jsx';
 
 // import { MdClear } from 'react-icons/md'
 
 const App = () => {
   return (
-    <body className='bg-gray-100'>
-      <div className='p-8'>
-        <ColorCards type='pink' />
-        <ColorCards type='yellow' />
-      </div>
+    <body className='p-8 bg-gray-100'>
+      <MainBlock />
+      <ColorCards type='pink' />
+      <ColorCards type='yellow' />
     </body>
   );
 };
