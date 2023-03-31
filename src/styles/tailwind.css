@@ -544,6 +544,10 @@ video {
   display: flex;
 }
 
+.contents {
+  display: contents;
+}
+
 .h-fit {
   height: -moz-fit-content;
   height: fit-content;
