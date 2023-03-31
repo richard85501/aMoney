@@ -2,13 +2,11 @@ const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 module.exports = {
   output: {
-    path: path.resolve(__dirname, 'build'), 
-    //path.resolve() 方法將一系列路徑或路徑段解析為絕對路徑。
-    // path.resolve('/foo/bar', './baz');
-    // Returns: '/foo/bar/baz'
+    path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
   },
   resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
     modules: [path.join(__dirname, 'src'), 'node_modules'],
     alias: {
       react: path.join(__dirname, 'node_modules', 'react'),
@@ -24,15 +22,12 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/,
-        use: [
-          {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',  
-          },
-        ],
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
     ],
   },

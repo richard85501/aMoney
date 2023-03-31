@@ -1,20 +1,18 @@
-import React from 'react'
-import Cards from './components/Cards.jsx'
-import './index.css'
+import React from 'react';
+import ColorCards from './components/ColorCards.jsx';
+import './styles/tailwind.css';
 
 // import { MdClear } from 'react-icons/md'
 
 const App = () => {
   return (
-    <body className="bg-gray-100">
-      <div className="p-8">
-        <Cards />
-        <h1 className="text-3xl font-bold underline bg-[#333] text-red-500">
-          Hello world!
-        </h1>
+    <body className='bg-gray-100'>
+      <div className='p-8'>
+        <ColorCards type='pink' />
+        <ColorCards type='yellow' />
       </div>
     </body>
-  )
-}
+  );
+};
 
-export default App
+export default App;
