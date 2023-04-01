@@ -1,8 +1,18 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styles from './styles/Button.module.scss';
+import React from "react";
+import PropTypes from "prop-types";
+import styles from "./styles/Button.module.scss";
 
-export const Button = ({ backgroundColor, size, label, type, onClick, icon, iconPlace, disabled, ...props }) => {
+const Button = ({
+  backgroundColor,
+  size,
+  label,
+  type,
+  onClick,
+  icon,
+  iconPlace,
+  disabled,
+  ...props
+}) => {
   Button.propTypes = {
     /**
      * What background color to use
@@ -11,7 +21,7 @@ export const Button = ({ backgroundColor, size, label, type, onClick, icon, icon
     /**
      * How large should the button be?
      */
-    size: PropTypes.oneOf(['small', 'medium', 'large', 'pureIcon']),
+    size: PropTypes.oneOf(["small", "medium", "large", "pureIcon"]),
     /**
      * Button contents
      */
@@ -23,7 +33,7 @@ export const Button = ({ backgroundColor, size, label, type, onClick, icon, icon
     /**
      * which type of button
      */
-    type: PropTypes.oneOf(['primary', 'secondary', 'tertiary']),
+    type: PropTypes.oneOf(["primary", "secondary", "tertiary"]),
     /**
      * where icon be
      */
@@ -31,7 +41,7 @@ export const Button = ({ backgroundColor, size, label, type, onClick, icon, icon
     /**
      * where icon be
      */
-    iconPlace: PropTypes.oneOf(['before', 'after']),
+    iconPlace: PropTypes.oneOf(["before", "after"]),
     /**
      * Button disabled
      */
@@ -40,31 +50,31 @@ export const Button = ({ backgroundColor, size, label, type, onClick, icon, icon
 
   Button.defaultProps = {
     backgroundColor: null,
-    size: 'medium',
+    size: "medium",
     onClick: undefined,
-    type: 'primary',
+    type: "primary",
     icon: null,
-    iconPlace: icon ? 'before' : null,
+    iconPlace: icon ? "before" : null,
     disabled: false,
   };
 
   const buttonStyles = () => {
-    let className = styles[`storybook-button`];
-    if (size) className += ' ' + styles[`storybook-button--${size}`];
-    if (type) className += ' ' + styles[`storybook-button--${type}`];
-    if (disabled) className += ' ' + styles[`storybook-button--disabled`];
+    let className = styles["storybook-button"];
+    if (size) className += " " + styles[`storybook-button--${size}`];
+    if (type) className += " " + styles[`storybook-button--${type}`];
+    if (disabled) className += " " + styles["storybook-button--disabled"];
     return className;
   };
 
   return (
     <button
-      type='button'
+      type="button"
       className={buttonStyles()}
       onClick={(e) => !disabled && onClick(e)}
       style={backgroundColor && { backgroundColor }}
       {...props}
     >
-      {iconPlace === 'before' ? (
+      {iconPlace === "before" ? (
         <>
           {icon} {label}
         </>
@@ -76,3 +86,5 @@ export const Button = ({ backgroundColor, size, label, type, onClick, icon, icon
     </button>
   );
 };
+
+export default Button;

@@ -1,18 +1,11 @@
-import React from 'react';
-import './styles/tailwind.css';
-import ColorCards from './components/ColorCards.jsx';
-import MainBlock from './components/MainBlock.jsx';
+import React from "react";
+import "./styles/tailwind.css";
+import Dashboard from "./pages/dashboard/Dashboard.jsx";
 
 // import { MdClear } from 'react-icons/md'
 
 const App = () => {
-  return (
-    <body className='p-8 bg-gray-100'>
-      <MainBlock />
-      <ColorCards type='pink' />
-      <ColorCards type='yellow' />
-    </body>
-  );
+  return <Dashboard />;
 };
 
 export default App;
