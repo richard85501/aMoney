@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var React = require("react");
+var react_1 = require("react");
 var chart_js_1 = require("chart.js");
 var chartjs_plugin_gradient_1 = require("chartjs-plugin-gradient");
 // import {
@@ -151,7 +151,7 @@ var LineChart = function (props) {
         },
         tooltips: { bodyFontSize: 20 },
     };
-    return (React.createElement(React.Fragment, null)
+    return (react_1.default.createElement(react_1.default.Fragment, null)
     // <Line data={chartData} options={options} />
     );
 };

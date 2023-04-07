@@ -22,7 +22,7 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var React = require("react");
+var react_1 = require("react");
 var Button_module_scss_1 = require("./styles/Button.module.scss");
 var Button = function (_a) {
     var backgroundColor = _a.backgroundColor, size = _a.size, label = _a.label, type = _a.type, onClick = _a.onClick, icon = _a.icon, iconPlace = _a.iconPlace, disabled = _a.disabled, props = __rest(_a, ["backgroundColor", "size", "label", "type", "onClick", "icon", "iconPlace", "disabled"]);
@@ -46,6 +46,6 @@ var Button = function (_a) {
             return label + icon;
         }
     };
-    return (React.createElement("button", __assign({ type: 'button', className: buttonStyles(), onClick: function (e) { return !disabled && onClick(e); }, style: backgroundColor ? { backgroundColor: backgroundColor } : undefined }, props), contentHandler(iconPlace)));
+    return (react_1.default.createElement("button", __assign({ type: 'button', className: buttonStyles(), onClick: function (e) { return !disabled && onClick(e); }, style: backgroundColor ? { backgroundColor: backgroundColor } : undefined }, props), contentHandler(iconPlace)));
 };
 exports.default = Button;

@@ -14,7 +14,7 @@
     "sourceMap": true, // 可建立來源檔案與輸出的js檔案關係map
     "outDir": "./public", // 編譯器編譯後的js檔案放置處 (註：public通常是要部署專案到伺服器用的資料夾)
     "removeComments": true, // 不會輸出註解
-    "noEmit": true, // 可避免輸出不符型別檢查的js檔案, 例如Day 1的string型態變數再賦值number值的範例
+    // "noEmit": true, // 可避免輸出不符型別檢查的js檔案, 例如Day 1的string型態變數再賦值number值的範例
 
     /* Interop Constraints */
     "esModuleInterop": true,

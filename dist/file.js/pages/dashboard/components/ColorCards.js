@@ -11,7 +11,7 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var React = require("react");
+var react_1 = require("react");
 var ColorCards_module_scss_1 = require("./styles/ColorCards.module.scss");
 var rx_1 = require("react-icons/rx");
 var ColorCards = function (_a) {
@@ -24,13 +24,13 @@ var ColorCards = function (_a) {
             className = ColorCards_module_scss_1.default.styleTwo;
         return className;
     };
-    return (React.createElement("div", { className: "".concat(ColorCards_module_scss_1.default.wrapper, " ").concat(stylesHandler(type)) },
-        React.createElement("div", { className: ColorCards_module_scss_1.default.wrapper_title }, "Revinues"),
-        React.createElement("div", { className: ColorCards_module_scss_1.default.wrapper_block },
-            React.createElement("div", { className: ColorCards_module_scss_1.default.icon },
-                React.createElement(rx_1.RxBarChart, null)),
-            React.createElement("div", { className: ColorCards_module_scss_1.default.content },
-                React.createElement("div", { className: ColorCards_module_scss_1.default.content_title }, "$432"),
-                React.createElement("div", { className: ColorCards_module_scss_1.default.content_subtitle }, "2022/01/02")))));
+    return (react_1.default.createElement("div", { className: "".concat(ColorCards_module_scss_1.default.wrapper, " ").concat(stylesHandler(type)) },
+        react_1.default.createElement("div", { className: ColorCards_module_scss_1.default.wrapper_title }, "Revinues"),
+        react_1.default.createElement("div", { className: ColorCards_module_scss_1.default.wrapper_block },
+            react_1.default.createElement("div", { className: ColorCards_module_scss_1.default.icon },
+                react_1.default.createElement(rx_1.RxBarChart, null)),
+            react_1.default.createElement("div", { className: ColorCards_module_scss_1.default.content },
+                react_1.default.createElement("div", { className: ColorCards_module_scss_1.default.content_title }, "$432"),
+                react_1.default.createElement("div", { className: ColorCards_module_scss_1.default.content_subtitle }, "2022/01/02")))));
 };
 exports.default = ColorCards;

@@ -27,7 +27,9 @@ const MainInfo = () => {
             <div className={styles.online}>online</div>
           </div>
         </div>
-        <div className={styles.right_content}>{/* <LineChart /> */}</div>
+        <div className={styles.right_content}>
+          <LineChart />
+        </div>
       </div>
     </div>
   );
