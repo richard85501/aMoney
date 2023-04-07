@@ -1,14 +1,34 @@
 {
-    "compilerOptions": {
-      "outDir": "./dist/",
-      "noImplicitAny": true,
-      "module": "es6",
-      "target": "es5",
-      "jsx": "react-jsx",
-      "allowJs": true,
-      "moduleResolution": "node",
-      "allowSyntheticDefaultImports": true,
-      "plugins": [{ "name": "typescript-plugin-css-modules" }]
-    },
-    "include": ["src/**/*.ts", "declarations.d.ts"]
-  }
+  "compilerOptions": {
+    "target": "ES5", // 編譯後的JavaScript程式碼版本
+
+    /* Modules */
+    "module": "CommonJS", // 編譯後產生的模組形式 (註：設定為commonjs通常是為了能讓程式在Node上執行)
+    "rootDir": "./src", // 設定編譯根目錄
+
+    /* JavaScript Support */
+    "allowJs": true, // 允許js檔案是否被TypeScript Compilet檢查 (官方建議可設"checkJs"為true來取得錯誤報告)
+    "checkJs": true, // 會對js檔案進行型別檢查且輸出錯誤報告
+
+    /* Emit */
+    "sourceMap": true, // 可建立來源檔案與輸出的js檔案關係map
+    "outDir": "./public", // 編譯器編譯後的js檔案放置處 (註：public通常是要部署專案到伺服器用的資料夾)
+    "removeComments": true, // 不會輸出註解
+    "noEmit": true, // 可避免輸出不符型別檢查的js檔案, 例如Day 1的string型態變數再賦值number值的範例
+
+    /* Interop Constraints */
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true, // 對import進來的模組檔名強制作大小寫轉換, 可避免如 import LearnTS.ts 寫成 import learnTS.ts 的大小寫錯誤
+
+    /* Type Checking */
+    "strict": true,
+    "noImplicitAny": true, // 不允許未指定型別的變數
+    "alwaysStrict": true, // 採用JavaScript嚴格模式檢查型別, 並且會在輸出的每一份JS檔案首行加上 "use strict"
+
+    "jsx": "react",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
+  },
+  "include": ["src/**/*.ts", "declarations.d.ts", "src/index.ts", "src/App.tsx"]
+}

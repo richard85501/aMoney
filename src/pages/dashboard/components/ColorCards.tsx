@@ -1,12 +1,19 @@
-import React from "react";
-import styles from "./styles/ColorCards.module.scss";
-import { RxBarChart } from "react-icons/rx";
+import React from 'react';
+import styles from './styles/ColorCards.module.scss';
+import { RxBarChart } from 'react-icons/rx';
 
-const ColorCards = ({ title, subtitle, date, type = "pink" }) => {
-  const stylesHandler = (type) => {
-    let className = "";
-    if (type === "pink") className = styles.styleOne;
-    if (type === "yellow") className = styles.styleTwo;
+type ColorCardsProps = {
+  title: string;
+  subtitle: string;
+  date: string;
+  type: string;
+};
+
+const ColorCards = ({ title, subtitle, date, type = 'pink', ...props }: ColorCardsProps) => {
+  const stylesHandler = (type: string) => {
+    let className = '';
+    if (type === 'pink') className = styles.styleOne;
+    if (type === 'yellow') className = styles.styleTwo;
     return className;
   };
 
