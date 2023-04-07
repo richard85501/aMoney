@@ -3,25 +3,32 @@
   width: fit-content;
   border-radius: 12px;
   padding: 16px;
+
   &_title {
     font-size: 12px;
     color: #fff;
   }
+
   &_block {
-    display: flex;
     justify-content: space-between;
+    display: flex;
     margin-top: 12px;
+
     .icon {
       color: #fff;
+
       & > * {
         font-size: 50px;
       }
     }
+
     .content {
       color: #fff;
+
       &_title {
         font-size: 24px;
       }
+
       &_subtitle {
         font-size: 12px;
       }

@@ -1,0 +1,37 @@
+.right{
+    &_header{
+    display: flex;
+        &>*{
+            margin-left: 32px;
+            font-size: 8px;
+        }
+        .legend{
+            display: flex;
+            flex-grow: 1;
+            margin-left: 50px;
+            &>:first-child{
+                margin-right: 48px;
+            }
+            .current,.online{
+                position: relative;
+                &::before{
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: -15px;
+                    width: 8px;
+                    height: 8px;
+                    transform: translateY(-50%);
+                    background-color: rgb(173 218 224);
+                    border-radius: 50%;
+                }
+            }
+        }
+
+    }
+    &_content{
+        margin-top: 12px;
+        height: 300px;
+        width: 100%;
+    }
+}

@@ -1,7 +1,9 @@
 import React from "react";
-import Button from "../../../Utility/Button.jsx";
+import LineChart from "../../../graphics/LineChart.jsx";
+import Button from "../../../Utility/Button.tsx";
+import styles from "./styles/MainInfo.module.scss";
 
-const MainBlock = () => {
+const MainInfo = () => {
   return (
     <div className="p-4 shadow-lg rounded-sm w-fit h-fit bg-slate-50 flex">
       <div>
@@ -15,16 +17,24 @@ const MainBlock = () => {
         </div>
         <Button label="last month summary" type="primary" size="small" />
       </div>
-      <div>
-        <div className="flex ml-5 ">
+
+      <div className={styles.right}>
+        <div className={styles.right_header}>
           <div>DAILY</div>
           <div>WEEKLY</div>
           <div>MONTHLY</div>
           <div>YEARLY</div>
+          <div className={styles.legend}>
+            <div className={styles.current}>current</div>
+            <div className={styles.online}>online</div>
+          </div>
+        </div>
+        <div className={styles.right_content}>
+          <LineChart />
         </div>
       </div>
     </div>
   );
 };
 
-export default MainBlock;
+export default MainInfo;
