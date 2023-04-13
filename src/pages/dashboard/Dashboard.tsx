@@ -6,7 +6,7 @@ import PercentBlock from './components/PercentBlock';
 const Dashboard = () => {
   return (
     <body className='p-8 bg-gray-100'>
-      <div className='flex '>
+      <div className='flex gap-px'>
         <MainInfo />
         <PercentBlock />
       </div>
@@ -17,3 +17,4 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+  

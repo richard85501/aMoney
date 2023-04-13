@@ -12,7 +12,7 @@ import {
   // Interaction,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-// import gradient from 'chartjs-plugin-gradient';
+import gradient from 'chartjs-plugin-gradient';
 // import {
 // CrosshairPlugin,
 // Interpolate,
@@ -97,20 +97,28 @@ const LineChart = (props: LineChartProps) => {
 
       borderWidth: borderWidth ? borderWidth : 2,
       tension: 0.3,
-      backgroundColor: backgroundColor ? backgroundColor : 'rgb(173, 218, 224)',
+      // backgroundColor: backgroundColor ? backgroundColor : 'rgb(173, 218, 224)',
       //要安裝 npm i chartjs-plugin-gradient
       // plugins: {
-      //   gradient: !backgroundColor
-      //     ? {
-      //         backgroundColor: {
-      //           axis: 'y',
-      //           colors: {
-      //             0: 'rgba(250, 250, 250, 0)',
-      //             100: 'rgba(110, 106, 106, 1)',
-      //           },
-      //         },
-      //       }
-      //     : null,
+        gradient: {
+          backgroundColor: {
+            axis: 'y',
+            colors: {
+              0: 'red',
+              50: 'yellow',
+              100: 'green'
+            }
+          },
+          borderColor: {
+            axis: 'x',
+            colors: {
+              0: 'black',
+              1: 'white',
+              2: 'black',
+              3: 'white'
+            }
+          }
+        }
       // },
     });
   });
@@ -158,7 +166,6 @@ const LineChart = (props: LineChartProps) => {
       // },
     },
     plugins: {
-      // gradient,
       legend: {
         display: false,
         position: 'top',
@@ -201,7 +208,6 @@ const LineChart = (props: LineChartProps) => {
   };
 
   return (
-    // <></>
     <Line data={chartData} options={options} />
   );
 };
