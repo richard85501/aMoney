@@ -8,7 +8,9 @@ const Dashboard = () => {
     <body className='p-8 bg-gray-100'>
       <div className='flex gap-px'>
         <MainInfo />
-        <PercentBlock />
+        <div className='ml-5'>
+          <PercentBlock />
+        </div>
       </div>
       <ColorCards type='pink' title='Revinues' subtitle='$432' date='2022/01/02' />
       <ColorCards type='yellow' title='Revinues' subtitle='$432' date='2022/01/02' />
