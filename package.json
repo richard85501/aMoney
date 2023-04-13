@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack server --mode=development --open --hot",
     "build": "webpack --mode=production",
-    "lint": "eslint src/*.js"
+    "lint": "eslint src/*.js",
+    "build-css": "npx tailwindcss -i ./src/index.css -o ./styles/tailwind.css --watch"
   },
   "keywords": [],
   "author": "",
