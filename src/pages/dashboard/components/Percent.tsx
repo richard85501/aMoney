@@ -30,7 +30,10 @@ const PercentBlock = () => {
       </div>
       <div className='flex justify-around mt-16'>
         {data.map((item) => (
-          <div className='text-black text-2xl font-medium'>{item.value}%</div>
+          <div className='flex flex-col'>
+            <div className='text-black text-2xl font-medium'>{item.value}%</div>
+            <div className='flex text-slate-400 text-xs'>{item.title}</div>
+          </div>
         ))}
       </div>
     </div>
