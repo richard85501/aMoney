@@ -5,7 +5,7 @@ import styles from './styles/MainInfo.module.scss';
 
 const MainInfo = () => {
   return (
-    <div className='p-4 shadow-lg rounded-sm w-fit h-fit bg-slate-50 flex'>
+    <div className='p-4 shadow-lg rounded-sm w-3/4 h-fit bg-slate-50 flex h-96'>
       <div>
         <div className='text-black text-lg'>DashBoard</div>
         <div className='mt-1 text-slate-400 text-xs'>overveiw of lastmonth</div>
@@ -28,7 +28,7 @@ const MainInfo = () => {
           </div>
         </div>
         <div className={styles.right_content}>
-          <LineChart />
+          <LineChart responsive={true} />
         </div>
       </div>
     </div>

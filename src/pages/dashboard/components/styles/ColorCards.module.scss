@@ -1,8 +1,10 @@
 .wrapper {
-  min-width: 250px;
+  // min-width: ;
   width: fit-content;
+  width: 25%;
   border-radius: 12px;
   padding: 16px;
+  margin-right: 8px;
 
   &_title {
     font-size: 12px;

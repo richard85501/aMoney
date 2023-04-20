@@ -97,21 +97,21 @@ const LineChart = (props: LineChartProps) => {
 
       borderWidth: borderWidth ? borderWidth : 2,
       tension: 0.3,
-      backgroundColor: backgroundColor ? backgroundColor : 'rgb(173, 218, 224)',
+      // backgroundColor: backgroundColor ? backgroundColor : 'rgb(173, 218, 224)',
       //要安裝 npm i chartjs-plugin-gradient
-      // plugins: {
-      //   gradient: !backgroundColor
-      //     ? {
-      //         backgroundColor: {
-      //           axis: 'y',
-      //           colors: {
-      //             0: 'rgba(250, 250, 250, 0)',
-      //             100: 'rgba(110, 106, 106, 1)',
-      //           },
-      //         },
-      //       }
-      //     : null,
-      // },
+      plugins: {
+        gradient: !backgroundColor
+          ? {
+              backgroundColor: {
+                axis: 'y',
+                colors: {
+                  0: 'rgba(250, 250, 250, 0)',
+                  100: 'rgba(110, 106, 106, 1)',
+                },
+              },
+            }
+          : null,
+      },
     });
   });
 

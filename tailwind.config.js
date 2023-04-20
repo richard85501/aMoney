@@ -10,6 +10,9 @@ module.exports = {
           200: '#888883',
         },
       },
+      height: {
+        128: '32rem',
+      },
     },
   },
   plugins: [],
