@@ -1,13 +1,13 @@
 .storybook-button {
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial,
-    sans-serif;
-  font-weight: 700;
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
   border: 0;
-  border-radius: 6px;
+  border-radius: 3px;
   cursor: pointer;
   display: inline-block;
   line-height: 1;
   transition: 0.3s;
+  white-space: nowrap;
 }
 
 .storybook-button {
@@ -43,11 +43,11 @@
     padding: 10px 16px;
   }
   &--medium {
-    font-size: 14px;
+    font-size: 12px;
     padding: 11px 20px;
   }
   &--large {
-    font-size: 16px;
+    font-size: 12px;
     padding: 12px 24px;
   }
   &--pureIcon {

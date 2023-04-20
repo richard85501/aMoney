@@ -13,7 +13,7 @@ const MainInfo = () => {
         <div className='mt-1 text-slate-400 text-xs'>current month earnig</div>
         <div className='mt-6 text-black text-2xl font-medium'>82</div>
         <div className='mt-1 mb-6 text-slate-400 text-xs'>current month sales</div>
-        <Button label='last month summary' type='primary' size='small' />
+        <Button label='last month summary' type='primary' size='large' />
       </div>
 
       <div className={styles.right}>
