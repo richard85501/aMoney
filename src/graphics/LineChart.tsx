@@ -77,6 +77,9 @@ const LineChart = (props: LineChartProps) => {
     [55, 61, 54, 88, 99, 44, 22, 33, 11],
     [11, 22, 46, 32, 74, 12, 56, 49, 66],
   ];
+  let color = ['#f22756', '#f09114'];
+  let bgcolor = ['#f227564a', '#f091144a'];
+
   let datasets: any = [];
   keys.forEach((item, idx) => {
     datasets.push({
@@ -87,7 +90,7 @@ const LineChart = (props: LineChartProps) => {
       pointBorderWidth: pointBorderWidth ? pointBorderWidth : 0,
       pointBorderColor: pointBorderColor ? pointBorderColor : 'black',
       pointHoverBorderWidth: pointHoverBorderWidth ? pointHoverBorderWidth : 0,
-      borderColor: borderColor ? borderColor : 'black',
+      borderColor: borderColor ? borderColor : color[idx],
       hoverBorderColor: hoverBorderColor ? hoverBorderColor : 'black',
       //point
       pointRadius: pointRadius ? pointRadius : 0,
@@ -97,7 +100,7 @@ const LineChart = (props: LineChartProps) => {
 
       borderWidth: borderWidth ? borderWidth : 2,
       tension: 0.3,
-      // backgroundColor: backgroundColor ? backgroundColor : 'rgb(173, 218, 224)',
+      backgroundColor: backgroundColor ? backgroundColor : bgcolor[idx],
       //要安裝 npm i chartjs-plugin-gradient
       plugins: {
         gradient: !backgroundColor

@@ -5,32 +5,31 @@
   border-radius: 12px;
   padding: 16px;
   margin-right: 8px;
-
   &_title {
     font-size: 12px;
     color: #fff;
-    margin-bottom: 20px;
+    &.primary {
+      margin-bottom: 20px;
+    }
+    &.second {
+      margin-bottom: 0;
+    }
   }
-
   &_block {
     justify-content: space-between;
     display: flex;
-
     .icon {
       color: #fff;
-
       & > * {
         font-size: 50px;
       }
     }
-
     .content {
       color: #fff;
-
+      position: relative;
       &_title {
         font-size: 24px;
       }
-
       &_subtitle {
         font-size: 12px;
       }
@@ -44,4 +43,8 @@
 
 .styleTwo {
   background-image: linear-gradient(330deg, #f09114, #e1e26f);
+}
+
+.styleThree {
+  background-image: linear-gradient(330deg, #930b9f, #cc98d0);
 }

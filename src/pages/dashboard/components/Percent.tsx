@@ -3,14 +3,14 @@ import React from 'react';
 import DoughnutChart from '../../../graphics/PieChart';
 
 const PercentBlock = () => {
-  let color = ['rgb(227, 183, 53)', 'rgb(233, 74, 140)', 'rgb(184, 65, 208)', 'rgb(74, 233, 77)', 'rgb(74, 95, 233)'];
+  let color = ['rgb(227, 183, 53)', 'rgb(233, 74, 140)', 'rgb(184, 65, 208)'];
 
   let pieChartData = {
-    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    labels: ['Red', 'Blue', 'Yellow'],
     datasets: [
       {
         label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
+        data: [12, 19, 3],
         backgroundColor: color,
 
         borderWidth: 0,
@@ -19,14 +19,14 @@ const PercentBlock = () => {
   };
 
   const data = [
-    { title: '午餐花費', value: 50, id: 1 },
-    { title: '交通花費', value: 40, id: 2 },
-    { title: '零食', value: 30, id: 3 },
+    { title: '期貨', value: 50, id: 1 },
+    { title: '股票', value: 40, id: 2 },
+    { title: '選擇權', value: 30, id: 3 },
   ];
 
   return (
     <div className='w-1/4 h-96 p-4 ml-5 shadow-lg rounded-sm bg-slate-50 flex flex-col'>
-      PercentBlock
+      Percent of investing
       <div className='w-full mt-8'>
         <DoughnutChart pieChartData={pieChartData} responsive={true} />
       </div>

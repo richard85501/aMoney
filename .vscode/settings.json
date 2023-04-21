@@ -4,6 +4,7 @@
     "titleBar.activeBackground": "#4A4000",
     "titleBar.activeForeground": "#FFFBDF"
   },
+  "workbench.editor.showTabs": true,
   "eslint.autoFixOnSave": true, //eslint保存时格式化
   "eslint.debug": true,
   //   "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
@@ -16,5 +17,5 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.stylelint": true,
     "source.fixAll.eslint": true
-  },
+  }
 }
