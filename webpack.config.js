@@ -38,9 +38,9 @@ module.exports = {
           { loader: 'style-loader' },
           {
             loader: 'css-loader',
-            // modules: {
-            //   localIdentName: "[path][name]__[local]--[hash:base64:5]",
-            // },
+            options: {
+              modules: { localIdentName: '[name]__[local]___[hash:base64:5]' },
+            },
           },
           {
             loader: 'sass-loader',
