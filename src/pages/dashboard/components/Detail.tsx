@@ -56,7 +56,7 @@ const Detail = () => {
           <TextField onChange={() => {}} />
         </div>
       </div>
-      <div className='w-full h-8 mt-4 bg-blue-900 rounded-lg flex'>
+      <div className='w-full h-10 mt-4 bg-blue-900 rounded-lg flex'>
         <div className='pl-5 text-slate-100 text-xs my-auto w-1/6'>CODE</div>
         <div className='pl-5 text-slate-100 text-xs my-auto w-1/6'>NAME</div>
         <div className='pl-5 text-slate-100 text-xs my-auto w-1/6'>TYPE</div>
