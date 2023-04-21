@@ -2,6 +2,7 @@ import React from 'react';
 import ColorCards from './components/ColorCards';
 import MainInfo from './components/MainInfo';
 import Percent from './components/Percent';
+import Activities from './components/Activities';
 
 const Dashboard = () => {
   return (
@@ -15,6 +16,10 @@ const Dashboard = () => {
         <ColorCards type='yellow' title='Revinues' subtitle='$432' date='2022/01/02' />
         <ColorCards type='pink' title='Revinues' subtitle='$432' date='2022/01/02' />
         <ColorCards type='yellow' title='Revinues' subtitle='$432' date='2022/01/02' />
+      </div>
+
+      <div className='flex mt-4 '>
+        <Activities />
       </div>
     </body>
   );

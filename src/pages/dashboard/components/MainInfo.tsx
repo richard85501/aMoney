@@ -1,6 +1,7 @@
 import React from 'react';
 import LineChart from '../../../graphics/LineChart';
 import Button from '../../../utility/Button';
+import ColorIcon from '../../../utility/ColorIcon';
 import styles from './styles/MainInfo.module.scss';
 
 import { FiActivity } from 'react-icons/fi';
@@ -45,9 +46,11 @@ const MainInfo = () => {
       <div className='flex justify-between'>
         {template.map((item) => (
           <div className='w-1/5 h-16 flex items-center'>
-            <div className='bg-red-400 w-8 h-8 rounded-full ml-2'>
+            <div className='bg-red-400 w-8 h-8 rounded-full'>
               <FiActivity className='m-auto h-full text-white' />
             </div>
+            {/* <ColorIcon icon={<FiActivity />} /> */}
+
             <div className='ml-2'>
               <div className='text-slate-400 text-xs'>{item.title}</div>
               <div className='text-black text-2l font-medium'>${item.value}</div>

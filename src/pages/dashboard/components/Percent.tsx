@@ -1,15 +1,17 @@
 import React from 'react';
-import styles from './styles/PercentBlock.module.scss';
+// import styles from './styles/PercentBlock.module.scss';
 import DoughnutChart from '../../../graphics/PieChart';
 
 const PercentBlock = () => {
+  let color = ['rgb(227, 183, 53)', 'rgb(233, 74, 140)', 'rgb(184, 65, 208)', 'rgb(74, 233, 77)', 'rgb(74, 95, 233)'];
+
   let pieChartData = {
     labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
     datasets: [
       {
         label: '# of Votes',
         data: [12, 19, 3, 5, 2, 3],
-        backgroundColor: ['rgb(227, 183, 53)', 'rgb(233, 74, 140)', 'rgb(184, 65, 208)', 'rgb(74, 233, 77)', 'rgb(74, 95, 233)'],
+        backgroundColor: color,
 
         borderWidth: 0,
       },
@@ -17,22 +19,25 @@ const PercentBlock = () => {
   };
 
   const data = [
-    { title: '午餐花費', value: 50 },
-    { title: '交通花費', value: 40 },
-    { title: '零食', value: 30 },
+    { title: '午餐花費', value: 50, id: 1 },
+    { title: '交通花費', value: 40, id: 2 },
+    { title: '零食', value: 30, id: 3 },
   ];
 
   return (
-    <div className='p-4 ml-5 shadow-lg rounded-sm w-1/4 h-fit bg-slate-50 flex h-96 flex-col'>
+    <div className='w-1/4 h-96 p-4 ml-5 shadow-lg rounded-sm bg-slate-50 flex flex-col'>
       PercentBlock
-      <div className='w-fit mt-8'>
+      <div className='w-full mt-8'>
         <DoughnutChart pieChartData={pieChartData} responsive={true} />
       </div>
       <div className='flex justify-around mt-16'>
-        {data.map((item) => (
-          <div className='flex flex-col'>
+        {data.map((item, idx) => (
+          <div className='flex flex-col' key={item.id}>
             <div className='text-black text-2xl font-medium'>{item.value}%</div>
-            <div className='flex text-slate-400 text-xs'>{item.title}</div>
+            <div className='flex text-slate-400 text-xs items-center mt-2'>
+              <div className='w-1.5 h-1.5 bg-slate-400 rounded-full mr-2'></div>
+              {item.title}
+            </div>
           </div>
         ))}
       </div>

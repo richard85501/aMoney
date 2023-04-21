@@ -1,0 +1,12 @@
+.line {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 40px;
+    bottom: -125%;
+    left: 50%;
+    background-color: rgba(0, 0, 0, 0.146);
+  }
+}
