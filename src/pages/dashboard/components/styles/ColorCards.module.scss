@@ -18,12 +18,7 @@
   &_block {
     justify-content: space-between;
     display: flex;
-    .icon {
-      color: #fff;
-      & > * {
-        font-size: 50px;
-      }
-    }
+    height: 25px;
     .content {
       color: #fff;
       position: relative;
@@ -35,16 +30,32 @@
       }
     }
   }
+  .blue{
+    width: fit-content;
+    margin-left: auto;
+    margin-right: 10px;
+  }
 }
 
-.styleOne {
+.icon {
+  color: #fff;
+  & > * {
+    font-size: 50px;
+  }
+}
+
+.stylePink {
   background-image: linear-gradient(330deg, #dc88e2, #f22756);
 }
 
-.styleTwo {
+.styleYellow {
   background-image: linear-gradient(330deg, #f09114, #e1e26f);
 }
 
-.styleThree {
+.stylePurple {
   background-image: linear-gradient(330deg, #930b9f, #cc98d0);
+}
+
+.styleBlue {
+  background-image: linear-gradient(330deg, #1d8cd0, #8ec4cc);
 }

@@ -15,7 +15,7 @@ const Dashboard = () => {
       <div className='flex mt-4 justify-center justify-around'>
         <ColorCards type='pink' title='Revinues' subtitle='$432' date='2022/01/02' />
         <ColorCards type='purple' title='Revinues' subtitle='$432' date='2022/01/02' />
-        <ColorCards type='pink' title='Revinues' subtitle='$432' date='2022/01/02' />
+        <ColorCards type='blue' title='Revinues' subtitle='$432' date='2022/01/02' />
         <ColorCards type='yellow' title='Revinues' subtitle='$432' date='2022/01/02' />
       </div>
 

@@ -10,7 +10,7 @@ const Detail = () => {
       type: '股票',
       buy: 94,
       sold: 90,
-      status: false,
+      isProfitable: false,
     },
     {
       code: 'MX4',
@@ -18,7 +18,7 @@ const Detail = () => {
       type: '期貨',
       buy: 15796,
       sold: 15600,
-      status: false,
+      isProfitable: false,
     },
     {
       code: 2451,
@@ -26,7 +26,7 @@ const Detail = () => {
       type: '股票',
       buy: 81,
       sold: 84,
-      status: true,
+      isProfitable: true,
     },
     {
       code: 2201,
@@ -34,7 +34,7 @@ const Detail = () => {
       type: '股票',
       buy: 80.9,
       sold: 78,
-      status: false,
+      isProfitable: false,
     },
     {
       code: 2330,
@@ -42,7 +42,7 @@ const Detail = () => {
       type: '股票',
       buy: 375,
       sold: 512,
-      status: true,
+      isProfitable: true,
     },
   ];
 
@@ -74,10 +74,10 @@ const Detail = () => {
             <div className='pl-5 text-slate-900 text-xs my-auto w-1/6'>{item.sold}</div>
             <div className='pl-5 text-slate-900 text-xs my-auto w-1/6'>
               <Button
-                label={item.status ? '上漲' : '下跌'}
+                label={item.isProfitable ? '上漲' : '下跌'}
                 type='primary'
                 size='small'
-                backgroundColor={item.status ? '' : '#67d11c'}
+                backgroundColor={item.isProfitable ? '' : '#67d11c'}
                 onClick={() => {}}
               />
             </div>
