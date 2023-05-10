@@ -75,7 +75,7 @@ const LineChart = (props: LineChartProps) => {
   let label = [55, 61, 54, 88, 99, 44, 22, 33, 11];
   let keys = [
     [55, 61, 54, 88, 99, 44, 22, 33, 11],
-    [11, 22, 46, 32, 74, 12, 56, 49, 66],
+    // [11, 22, 46, 32, 74, 12, 56, 49, 66],
   ];
   let color = ['#f22756', '#f09114'];
   let bgcolor = ['#f227564a', '#f091144a'];
@@ -202,9 +202,7 @@ const LineChart = (props: LineChartProps) => {
     tooltips: { bodyFontSize: 20 },
   };
 
-  return (
-    <Line data={chartData} options={options} />
-  );
+  return <Line data={chartData} options={options} />;
 };
 
 export default LineChart;

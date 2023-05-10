@@ -2,50 +2,21 @@ import React from 'react';
 import Button from '../../../utility/Button';
 import TextField from '../../../utility/TextField';
 
-const Detail = () => {
-  const detail = [
-    {
-      code: 8086,
-      name: '宏捷科',
-      type: '股票',
-      buy: 94,
-      sold: 90,
-      isProfitable: false,
-    },
-    {
-      code: 'MX4',
-      name: '小台指',
-      type: '期貨',
-      buy: 15796,
-      sold: 15600,
-      isProfitable: false,
-    },
-    {
-      code: 2451,
-      name: '華達材料',
-      type: '股票',
-      buy: 81,
-      sold: 84,
-      isProfitable: true,
-    },
-    {
-      code: 2201,
-      name: '裕隆',
-      type: '股票',
-      buy: 80.9,
-      sold: 78,
-      isProfitable: false,
-    },
-    {
-      code: 2330,
-      name: '台積電',
-      type: '股票',
-      buy: 375,
-      sold: 512,
-      isProfitable: true,
-    },
-  ];
+type DetailProps = {
+  data?: Array<{
+    code: string;
+    name: string;
+    type: string;
+    buy: string;
+    sold: string;
+    isProfitable: string;
+    startPeriod: string;
+    isFinished: string;
+    profit: string;
+  }>;
+};
 
+const Detail = ({ data }: DetailProps) => {
   return (
     <div className='p-4 ml-5 shadow-lg rounded-sm w-2/3 bg-slate-50 flex h-96 flex-col '>
       Detail Status
@@ -65,8 +36,8 @@ const Detail = () => {
         <div className='pl-5 text-slate-100 text-xs my-auto w-1/6'>STATUS</div>
       </div>
       <div className='overflow-auto'>
-        {detail.map((item) => (
-          <div className='w-full h-fit mt-4 rounded-lg flex'>
+        {data?.map((item: any, idx: number) => (
+          <div className='w-full h-fit mt-4 rounded-lg flex' key={idx}>
             <div className='pl-5 text-slate-900 text-xs my-auto w-1/6'>{item.code}</div>
             <div className='pl-5 text-slate-900 text-xs my-auto w-1/6'>{item.name}</div>
             <div className='pl-5 text-slate-900 text-xs my-auto w-1/6'>{item.type}</div>

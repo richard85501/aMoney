@@ -8,8 +8,8 @@ const Activities = () => {
   return (
     <div className='p-4 shadow-lg rounded-sm w-1/3 bg-slate-50 flex h-96 flex-col'>
       Rencent Activites
-      {value.map((item) => (
-        <div className='flex items-center mt-6'>
+      {value.map((item, idx) => (
+        <div className='flex items-center mt-6' key={idx}>
           <div className='text-slate-400 text-xs'>42 Mins ago </div>
           <div className={`bg-red-400 w-8 h-8 rounded-full ml-4 ${styles.line}`}>
             <FiCloudDrizzle className='m-auto h-full text-white' />
