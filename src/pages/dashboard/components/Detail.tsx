@@ -7,12 +7,12 @@ type DetailProps = {
     code: string;
     name: string;
     type: string;
-    buy: string;
-    sold: string;
+    buy: number;
+    sold: number;
     isProfitable: string;
     startPeriod: string;
     isFinished: string;
-    profit: string;
+    profit: number;
   }>;
 };
 
@@ -27,15 +27,12 @@ const Detail = ({ data }: DetailProps) => {
       });
       return ((winningTimes / data.length) * 100).toFixed(0);
     }
-    return 0;
+    return winningTimes;
   };
 
   useEffect(() => {
     if (data && search) {
-      let res = data.reduce((acc: any, obj: any) => {
-        if (obj.name.includes(search)) acc.push(obj);
-        return acc;
-      }, []);
+      let res = data.filter((item) => item.name.includes(search));
       setList(res);
     } else {
       setList(data);

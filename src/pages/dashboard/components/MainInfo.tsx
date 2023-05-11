@@ -11,12 +11,12 @@ type MainInfoProps = {
     code: string;
     name: string;
     type: string;
-    buy: string;
-    sold: string;
+    buy: number;
+    sold: number;
     isProfitable: string;
     startPeriod: string;
     isFinished: string;
-    profit: string;
+    profit: number;
   }>;
 };
 
@@ -38,25 +38,24 @@ const MainInfo = ({ data }: MainInfoProps) => {
   };
 
   const getEachProductEarning = (title: string) => {
+    data;
     let res = data?.reduce((acc: number, obj: any) => {
-      if (obj.profit && obj.type === title) acc = acc + +obj.profit;
+      if (obj.profit && obj.type === title) acc = acc + obj.profit;
       return acc;
     }, 0);
     return res;
   };
 
   const getxAxisLabels = () => {
+    let arr = [];
     if (data) {
       let i = 0;
-      let arr = [];
       while (i < data.length) {
         arr.push(i);
         i++;
       }
-      return arr;
-    } else {
-      return [];
     }
+    return arr;
   };
 
   const getValues = () => {

@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://richard85501.github.io/aMoney",
   "scripts": {
     "start": "webpack server --mode=development --open --hot",
     "build": "webpack --mode=production",
     "lint": "eslint src/*.js",
-    "build-css": "npx tailwindcss -i ./src/index.css -o ./src/styles/tailwind.css --watch"
+    "build-css": "npx tailwindcss -i ./src/index.css -o ./src/styles/tailwind.css --watch",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +18,7 @@
   "dependencies": {
     "chart.js": "^4.2.1",
     "chartjs-plugin-gradient": "^0.6.1",
+    "gh-pages": "^5.0.0",
     "moment": "^2.29.4",
     "openai": "^3.2.1",
     "react": "^18.2.0",

@@ -20,14 +20,14 @@ const Dashboard = () => {
             code: obj[0],
             name: obj[1],
             share: obj[2],
-            buy: obj[3],
-            sold: obj[4],
+            buy: +obj[3],
+            sold: +obj[4],
             isProfitable: obj[5] === 'FALSE' ? false : true,
             startPeriod: obj[6],
             endPeriod: obj[7],
             isFinished: obj[8],
             type: obj[9],
-            profit: obj[10],
+            profit: +obj[10],
           };
           acc.push(detail);
           return acc;
