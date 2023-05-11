@@ -23,7 +23,7 @@ ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, T
 // ChartJS.register(gradient);
 // ChartJS.defaults.showLine = true;
 
-type LineChartProps = {
+interface LineChartProps {
   data?: string;
   responsive?: boolean; //是否要符合外層寬高
   pointBorderWidth?: string; //點的邊框寬度 *int
@@ -45,7 +45,9 @@ type LineChartProps = {
   yAxesMax?: string; //y軸最大值 *int
   yAxesStepSize?: string; //y軸每一個值相隔的距離 *int
   yAxesFontSize?: string; //y軸字體大小 *int
-};
+  xAxisLabel?: Array<number>;
+  values?: number[][];
+}
 
 const LineChart = (props: LineChartProps) => {
   const {
@@ -70,18 +72,20 @@ const LineChart = (props: LineChartProps) => {
     yAxesMax, //y軸最大值 *int
     yAxesStepSize, //y軸每一個值相隔的距離 *int
     yAxesFontSize, //y軸字體大小 *int
+    xAxisLabel, //x軸
+    values, //輸入的值
   } = props;
 
-  let label = [55, 61, 54, 88, 99, 44, 22, 33, 11];
-  let keys = [
-    [55, 61, 54, 88, 99, 44, 22, 33, 11],
-    // [11, 22, 46, 32, 74, 12, 56, 49, 66],
-  ];
+  // let xAxisLabel = [55, 61, 54, 88, 99, 44, 22, 33, 11];
+  // let values = [
+  //   [55, 61, 54, 88, 99, 44, 22, 33, 11],
+  //   // [11, 22, 46, 32, 74, 12, 56, 49, 66],
+  // ];
   let color = ['#f22756', '#f09114'];
   let bgcolor = ['#f227564a', '#f091144a'];
 
   let datasets: any = [];
-  keys.forEach((item, idx) => {
+  values?.forEach((item, idx) => {
     datasets.push({
       label: 'line chart',
       data: item,
@@ -119,7 +123,7 @@ const LineChart = (props: LineChartProps) => {
   });
 
   const chartData = {
-    labels: label,
+    labels: xAxisLabel,
     datasets: datasets,
   };
 
@@ -180,7 +184,7 @@ const LineChart = (props: LineChartProps) => {
         callbacks: {
           // title: titleTooltip,
           // labelTextColor: labelTextColor,
-          label: label,
+          label: xAxisLabel,
           // footer: footer,
           // afterFooter: afterFooter
         },

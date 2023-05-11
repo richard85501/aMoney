@@ -6,7 +6,7 @@ import { FiCloudDrizzle } from 'react-icons/fi';
 const Activities = () => {
   const value = [1, 2, 3, 4, 5];
   return (
-    <div className='p-4 shadow-lg rounded-sm w-1/3 bg-slate-50 flex h-96 flex-col'>
+    <div className='p-4 shadow-lg rounded-sm w-1/3 bg-slate-50 flex h-128 flex-col'>
       Rencent Activites
       {value.map((item, idx) => (
         <div className='flex items-center mt-6' key={idx}>

@@ -24,10 +24,9 @@ const MainInfo = ({ data }: MainInfoProps) => {
   const [period, setPeriod] = useState(0);
   const periodList = ['DAILY', 'WEEKLY', 'MONTHLY', 'YEARLY'];
   const template = [
-    { title: '股票損益', value: '5000' },
-    { title: '期貨損益', value: '5000' },
-    { title: '選擇權損益', value: '5000' },
-    { title: '總損益', value: '5000' },
+    { title: '股票損益', value: '股票' },
+    { title: '期貨損益', value: '期貨' },
+    { title: '選擇權損益', value: '選擇權' },
   ];
 
   const getSumOfEarning = () => {
@@ -36,6 +35,45 @@ const MainInfo = ({ data }: MainInfoProps) => {
       return acc;
     }, 0);
     return total;
+  };
+
+  const getEachProductEarning = (title: string) => {
+    let res = data?.reduce((acc: number, obj: any) => {
+      if (obj.profit && obj.type === title) acc = acc + +obj.profit;
+      return acc;
+    }, 0);
+    return res;
+  };
+
+  const getxAxisLabels = () => {
+    if (data) {
+      let i = 0;
+      let arr = [];
+      while (i < data.length) {
+        arr.push(i);
+        i++;
+      }
+      return arr;
+    } else {
+      return [];
+    }
+  };
+
+  const getValues = () => {
+    if (data) {
+      let i = 0;
+      let profitList: number[][] = [[]];
+      data.forEach((item) => {
+        if (item.profit) {
+          i = i + +item.profit;
+          profitList[0].push(i);
+        } else {
+          profitList[0].push(i);
+        }
+      });
+      return profitList;
+    }
+    return [[]];
   };
 
   return (
@@ -60,12 +98,12 @@ const MainInfo = ({ data }: MainInfoProps) => {
             ))}
 
             <div className={styles.legend}>
-              <div className={styles.current}>current</div>
-              <div className={styles.online}>online</div>
+              {/* <div className={styles.current}>current</div> */}
+              <div className={styles.online}>total</div>
             </div>
           </div>
           <div className={styles.right_content}>
-            <LineChart responsive={true} />
+            <LineChart responsive={true} xAxisLabel={getxAxisLabels()} values={getValues()} />
           </div>
         </div>
       </div>
@@ -79,7 +117,7 @@ const MainInfo = ({ data }: MainInfoProps) => {
 
             <div className='ml-2'>
               <div className='text-slate-400 text-xs'>{item.title}</div>
-              <div className='text-black text-2l font-medium'>${item.value}</div>
+              <div className='text-black text-2l font-medium'>${getEachProductEarning(item.value)}</div>
             </div>
           </div>
         ))}
