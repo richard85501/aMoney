@@ -40,7 +40,7 @@ const Detail = ({ data }: DetailProps) => {
   }, [data, search]);
 
   return (
-    <div className='p-4 ml-5 shadow-lg rounded-sm w-2/3 bg-slate-50 flex h-128 flex-col '>
+    <div className='p-4 shadow-lg rounded-sm w-full bg-slate-50 flex h-128 flex-col '>
       Detail Status
       <div className='text-slate-400 text-xs mt-1'>OverView of Lastest Month</div>
       <div className='flex mt-5 items-center'>
@@ -50,7 +50,7 @@ const Detail = ({ data }: DetailProps) => {
           <TextField onChange={(e: any) => setSearch(e.target.value)} value={search} />
         </div>
       </div>
-      <div className='w-full h-10 mt-4 bg-blue-900 rounded-lg flex'>
+      <div className='p-2 w-full h-fit mt-4 bg-blue-900 rounded-lg flex'>
         <div className='pl-5 text-slate-100 text-xs my-auto w-1/6'>CODE</div>
         <div className='pl-5 text-slate-100 text-xs my-auto w-1/6'>NAME</div>
         <div className='pl-5 text-slate-100 text-xs my-auto w-1/6'>TYPE</div>

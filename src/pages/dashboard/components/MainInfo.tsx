@@ -5,6 +5,7 @@ import ColorIcon from '../../../utility/ColorIcon';
 import styles from './styles/MainInfo.module.scss';
 
 import { FiActivity } from 'react-icons/fi';
+import { isTemplateTail } from 'typescript/lib/tsserverlibrary';
 
 type MainInfoProps = {
   data?: Array<{
@@ -21,8 +22,8 @@ type MainInfoProps = {
 };
 
 const MainInfo = ({ data }: MainInfoProps) => {
-  const [period, setPeriod] = useState(0);
-  const periodList = ['DAILY', 'WEEKLY', 'MONTHLY', 'YEARLY'];
+  // const [period, setPeriod] = useState(0);
+  // const periodList = ['DAILY', 'WEEKLY', 'MONTHLY', 'YEARLY'];
   const template = [
     { title: '股票損益', value: '股票' },
     { title: '期貨損益', value: '期貨' },
@@ -38,7 +39,6 @@ const MainInfo = ({ data }: MainInfoProps) => {
   };
 
   const getEachProductEarning = (title: string) => {
-    data;
     let res = data?.reduce((acc: number, obj: any) => {
       if (obj.profit && obj.type === title) acc = acc + obj.profit;
       return acc;
@@ -47,36 +47,24 @@ const MainInfo = ({ data }: MainInfoProps) => {
   };
 
   const getxAxisLabels = () => {
-    let arr = [];
-    if (data) {
-      let i = 0;
-      while (i < data.length) {
-        arr.push(i);
-        i++;
-      }
-    }
+    const arr = Array(data?.length)
+      .fill(null)
+      .map((_, index) => index + 1);
     return arr;
   };
 
   const getValues = () => {
-    if (data) {
-      let i = 0;
-      let profitList: number[][] = [[]];
-      data.forEach((item) => {
-        if (item.profit) {
-          i = i + +item.profit;
-          profitList[0].push(i);
-        } else {
-          profitList[0].push(i);
-        }
-      });
-      return profitList;
-    }
-    return [[]];
+    let profitList: number[][] = [[]];
+    data?.reduce((acc: number, obj: any) => {
+      if (obj.profit) acc = acc + obj.profit;
+      profitList[0].push(acc);
+      return acc;
+    }, 0);
+    return profitList;
   };
 
   return (
-    <div className='p-4 shadow-lg rounded-sm w-3/4 h-fit bg-slate-50 h-96'>
+    <div className='p-4 shadow-lg rounded-sm w-3/4 h-128 bg-slate-50 h-96'>
       <div className='flex'>
         <div>
           <div className='text-black text-lg'>DashBoard</div>
@@ -89,7 +77,7 @@ const MainInfo = ({ data }: MainInfoProps) => {
         </div>
 
         <div className={styles.right}>
-          <div className={styles.right_header}>
+          {/* <div className={styles.right_header}>
             {periodList.map((item, idx) => (
               <div key={idx} className={idx === period ? styles.select : styles.default} onClick={() => setPeriod(idx)}>
                 {item}
@@ -97,10 +85,10 @@ const MainInfo = ({ data }: MainInfoProps) => {
             ))}
 
             <div className={styles.legend}>
-              {/* <div className={styles.current}>current</div> */}
+              <div className={styles.current}>current</div>
               <div className={styles.online}>total</div>
             </div>
-          </div>
+          </div> */}
           <div className={styles.right_content}>
             <LineChart responsive={true} xAxisLabel={getxAxisLabels()} values={getValues()} />
           </div>
