@@ -37,7 +37,7 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <body className='p-8 bg-gray-100'>
+    <div className='p-8 bg-gray-100'>
       <div className='flex'>
         <MainInfo data={data} />
         <Percent data={data} />
@@ -53,7 +53,7 @@ const Dashboard = () => {
         {/* <Activities /> */}
         <Detail data={data} />
       </div>
-    </body>
+    </div>
   );
 };
 
