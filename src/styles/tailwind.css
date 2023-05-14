@@ -550,6 +550,10 @@ video {
   }
 }
 
+.fixed {
+  position: fixed;
+}
+
 .m-auto {
   margin: auto;
 }
@@ -609,6 +613,14 @@ video {
 
 .mt-8 {
   margin-top: 2rem;
+}
+
+.ml-8 {
+  margin-left: 2rem;
+}
+
+.ml-10 {
+  margin-left: 2.5rem;
 }
 
 .flex {
@@ -844,6 +856,10 @@ video {
 .to-red-500 {
   --tw-gradient-to: #ef4444 var(--tw-gradient-to-position);
   --tw-gradient-to-position:  ;
+}
+
+.bg-fixed {
+  background-attachment: fixed;
 }
 
 .p-2 {

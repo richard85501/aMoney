@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div className="flex">
       <Navigation />
-      <div className="w-full">
+      <div className="w-full ml-10">
         <Dashboard />
       </div>
     </div>
